@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #000 0%, #001a00 25%, #003300 50%, #004d00 75%, #006600 100%);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.portrait-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-height: 70vh;
+    width: 100%;
+}
+
+#ascii-portrait {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.btn {
+    color: white;
+    text-decoration: none;
+    padding: 12px 32px;
+    border: 2px solid white;
+    background: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (max-height: 500px) {
+    .portrait-wrapper {
+        max-height: 60vh;
+    }
+
+    .buttons {
+        padding: 10px 0;
+    }
+
+    .btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
