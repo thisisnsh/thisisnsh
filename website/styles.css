@@ -8,9 +8,10 @@ body {
   font-family: 'DM Sans', sans-serif;
   background: #fff;
   color: #1a1a1a;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* Header */
@@ -65,35 +66,32 @@ main {
   position: relative;
 }
 
-/* Left Section with Beige Background */
-.left-section {
-  width: 45%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0;
-}
-
 .beige-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 45%;
   height: 100%;
   background: #e8ddd0;
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
 }
 
-.profile-card {
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 1;
+}
+
+.profile-card {
   background: #f5f0eb;
   border-radius: 0;
   padding: 48px 56px;
   text-align: center;
   width: 340px;
-  margin-right: -40px;
+  flex-shrink: 0;
 }
 
 .profile-image {
@@ -150,11 +148,12 @@ main {
 
 /* Right Section */
 .right-section {
-  width: 55%;
-  padding: 80px 80px 80px 100px;
+  width: 520px;
+  padding: 40px 0 40px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .greeting {
@@ -242,28 +241,35 @@ footer {
 
 /* Responsive */
 @media (max-width: 1024px) {
-  main {
-    flex-direction: column;
-  }
-
-  .left-section {
-    width: 100%;
-    padding: 60px 20px;
-    justify-content: center;
+  body {
+    height: auto;
+    min-height: 100vh;
+    overflow: auto;
   }
 
   .beige-bg {
     width: 100%;
+    height: 120px;
     clip-path: none;
   }
 
+  .content-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px;
+    margin-top: 60px;
+  }
+
   .profile-card {
-    margin-right: 0;
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 
   .right-section {
     width: 100%;
-    padding: 60px 20px;
+    max-width: none;
+    padding: 40px 0 60px;
   }
 
   .greeting {
@@ -277,7 +283,7 @@ footer {
 
 @media (max-width: 600px) {
   header {
-    padding: 20px;
+    padding: 16px;
   }
 
   .logo-text {
@@ -288,15 +294,26 @@ footer {
     display: none;
   }
 
+  .beige-bg {
+    height: 100px;
+  }
+
+  .content-wrapper {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
   .profile-card {
-    width: 100%;
-    max-width: 320px;
     padding: 40px 32px;
   }
 
   .profile-image {
     width: 160px;
     height: 160px;
+  }
+
+  .right-section {
+    padding: 40px 0 60px;
   }
 
   .greeting {
@@ -312,7 +329,7 @@ footer {
   }
 
   footer {
-    padding: 20px;
+    padding: 16px;
     text-align: center;
   }
 }
