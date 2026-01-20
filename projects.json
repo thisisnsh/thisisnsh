@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "name": "🔥 Fire Fortress",
+      "description": "A blazing fast application built with modern technologies. Ignites performance and burns through bottlenecks.",
+      "link": "https://github.com/thisisnsh/fire-fortress",
+      "element": "fire"
+    },
+    {
+      "name": "💧 Aqua Flow",
+      "description": "Fluid user experiences that adapt and flow seamlessly across all devices and platforms.",
+      "link": "https://github.com/thisisnsh/aqua-flow",
+      "element": "water"
+    },
+    {
+      "name": "🌍 Terra Build",
+      "description": "Solid foundations for scalable applications. Grounded in best practices and built to last.",
+      "link": "https://github.com/thisisnsh/terra-build",
+      "element": "earth"
+    },
+    {
+      "name": "💨 Zephyr API",
+      "description": "Lightweight and swift like the wind. API solutions that breeze through complex integrations.",
+      "link": "https://github.com/thisisnsh/zephyr-api",
+      "element": "air"
+    }
+  ]
+}
