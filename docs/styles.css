@@ -165,6 +165,11 @@ main {
   height: 24px;
 }
 
+.social-link-email svg {
+  transform: scale(1.12);
+  transform-origin: center;
+}
+
 /* Right Section */
 .right-section {
   width: 520px;
@@ -257,68 +262,6 @@ main {
 .bio a:hover {
   color: #6a9a3a;
   text-decoration: underline;
-}
-
-.tooltip-anchor {
-  position: relative;
-  display: inline-block;
-  border-bottom: 2px dotted #7cb342;
-  cursor: help;
-  padding-bottom: 1px;
-}
-
-.tooltip-anchor::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 14px);
-  width: min(320px, calc(100vw - 32px));
-  padding: 14px 16px;
-  border: 1px solid rgba(124, 179, 66, 0.28);
-  border-radius: 16px;
-  background: rgba(245, 240, 235, 0.96);
-  backdrop-filter: blur(10px);
-  color: #1a1a1a;
-  font-size: 14px;
-  line-height: 1.4;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(-50%);
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  box-shadow: 0 18px 40px rgba(26, 26, 26, 0.12);
-  z-index: 10;
-}
-
-.tooltip-anchor::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 6px);
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  background: rgba(245, 240, 235, 0.96);
-  border-right: 1px solid rgba(124, 179, 66, 0.28);
-  border-bottom: 1px solid rgba(124, 179, 66, 0.28);
-  transform: rotate(45deg);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  z-index: 9;
-}
-
-.tooltip-anchor:hover::after,
-.tooltip-anchor:hover::before,
-.tooltip-anchor:focus-visible::after,
-.tooltip-anchor:focus-visible::before {
-  opacity: 1;
-  visibility: visible;
-}
-
-.tooltip-anchor:focus-visible {
-  outline: 2px solid #7cb342;
-  outline-offset: 4px;
 }
 
 /* Studios page */
