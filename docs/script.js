@@ -287,10 +287,89 @@ document.documentElement.classList.add('js');
     listen(window, 'blur', hide);
   };
 
+  const initCarousels = () => {
+    document.querySelectorAll('.project-grid').forEach((carousel) => {
+      const cards = [...carousel.querySelectorAll('.project-item')];
+      const controls = document.createElement('nav');
+      const previousButton = document.createElement('button');
+      const nextButton = document.createElement('button');
+      let frameId = 0;
+
+      controls.className = 'carousel-controls';
+      controls.setAttribute('aria-label', `${carousel.getAttribute('aria-label')} navigation`);
+      previousButton.className = 'carousel-button carousel-button--previous';
+      previousButton.type = 'button';
+      nextButton.className = 'carousel-button carousel-button--next';
+      nextButton.type = 'button';
+      controls.append(previousButton, nextButton);
+      carousel.after(controls);
+
+      const projectName = (card) => card?.querySelector('h3')?.textContent.trim() || 'project';
+
+      const updateControls = (centeredCard) => {
+        const centeredIndex = cards.indexOf(centeredCard);
+        const previousCard = cards[centeredIndex - 1];
+        const nextCard = cards[centeredIndex + 1];
+
+        previousButton.hidden = !previousCard;
+        nextButton.hidden = !nextCard;
+
+        if (previousCard) {
+          const name = projectName(previousCard);
+          previousButton.textContent = `← ${name}`;
+          previousButton.setAttribute('aria-label', `Previous project: ${name}`);
+        }
+        if (nextCard) {
+          const name = projectName(nextCard);
+          nextButton.textContent = `${name} →`;
+          nextButton.setAttribute('aria-label', `Next project: ${name}`);
+        }
+      };
+
+      const centerCard = (card) => {
+        if (!card) return;
+        const left = card.offsetLeft - (carousel.clientWidth - card.offsetWidth) / 2;
+        carousel.scrollTo({ left, behavior: reduceMotionQuery.matches ? 'auto' : 'smooth' });
+      };
+
+      const updateCenteredCard = () => {
+        frameId = 0;
+        const carouselBounds = carousel.getBoundingClientRect();
+        const carouselCenter = carouselBounds.left + carouselBounds.width / 2;
+        const centeredCard = cards.reduce((closest, card) => {
+          const bounds = card.getBoundingClientRect();
+          const distance = Math.abs(bounds.left + bounds.width / 2 - carouselCenter);
+          return !closest || distance < closest.distance ? { card, distance } : closest;
+        }, null)?.card;
+
+        cards.forEach((card) => card.classList.toggle('is-centered', card === centeredCard));
+        updateControls(centeredCard);
+      };
+
+      const scheduleUpdate = () => {
+        if (!frameId) frameId = requestAnimationFrame(updateCenteredCard);
+      };
+
+      listen(carousel, 'scroll', scheduleUpdate, { passive: true });
+      listen(window, 'resize', scheduleUpdate, { passive: true });
+      listen(previousButton, 'click', () => {
+        const centeredIndex = cards.findIndex((card) => card.classList.contains('is-centered'));
+        centerCard(cards[centeredIndex - 1]);
+      });
+      listen(nextButton, 'click', () => {
+        const centeredIndex = cards.findIndex((card) => card.classList.contains('is-centered'));
+        centerCard(cards[centeredIndex + 1]);
+      });
+      cleanup.push(() => frameId && cancelAnimationFrame(frameId));
+      updateCenteredCard();
+    });
+  };
+
   initFog();
   const fields = createIconFields();
   initObservers(fields);
   initCursorGlow();
+  initCarousels();
 
   listen(window, 'pagehide', () => cleanup.splice(0).forEach((dispose) => dispose()), { once: true });
 })();
