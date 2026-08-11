@@ -1,75 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nishant Singh Hada | Developer / Designer</title>
-  <meta name="description" content="Nishant Singh Hada - Developer and designer based in New York">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <div class="logo-icon"></div>
-      <span class="logo-text">Nishant Singh Hada</span>
-      <span class="logo-subtitle">/ developer / designer</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a2414" />
+    <meta name="description" content="Nishant Hada is a software engineer and instinctive designer in New York, building useful, private, and human technology." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thisisnsh.com/" />
+    <meta property="og:title" content="Nishant Hada — Still flowing. Still building." />
+    <meta property="og:description" content="Software, objects, stories, and other things built by Nishant Hada." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nishant Hada — Still flowing. Still building." />
+    <meta name="twitter:description" content="Software, objects, stories, and other things built by Nishant Hada." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Nishant Hada — Software Engineer &amp; Designer</title>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <canvas class="fog-canvas"></canvas>
     </div>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/" class="nav-link is-active" aria-current="page">Me</a>
-      <a href="https://nshstudios.com" class="nav-link">Studios</a>
-    </nav>
-  </header>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="icon-stage" aria-hidden="true"></div>
 
-  <main>
-    <div class="beige-bg"></div>
-    <div class="content-wrapper">
-      <div class="profile-card">
-        <img src="img/profile.jpeg" alt="Nishant Singh Hada" class="profile-image">
-        <h2 class="profile-name">Nishant<br>Singh Hada</h2>
-        <div class="profile-divider"></div>
-        <p class="profile-role">developer / designer</p>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/thisisnsh" target="_blank" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="https://instagram.com/thisisnsh" target="_blank" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-          <a href="mailto:hello@thisisnsh.com" class="social-link social-link-email" aria-label="Email hello@thisisnsh.com">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5zm2.13-.5 7.87 6.11L19.87 5zm15.87 1.02-7.39 5.74a1 1 0 0 1-1.22 0L4 6.02V18.5c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5z"/>
-            </svg>
-          </a>
-          <a href="https://github.com/thisisnsh" target="_blank" class="social-link" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
+    <svg class="icon-definitions" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="icon-flow" viewBox="0 0 100 80"><path fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" d="M8 50c16-34 28 27 45-7S80 16 92 30" /><path fill="currentColor" d="m76 13 18 14-21 6z" /></symbol>
+        <symbol id="icon-leaf" viewBox="0 0 100 80"><path fill="currentColor" d="M88 8C49 8 17 22 12 50c-3 16 10 24 23 19 22-8 29-33 53-61Z" /><path fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" d="M14 72C30 48 49 34 75 20" /></symbol>
+        <symbol id="icon-spark" viewBox="0 0 100 80"><path fill="currentColor" d="M50 3c4 25 12 33 38 37-26 4-34 12-38 37-4-25-12-33-38-37C38 36 46 28 50 3Z" /><circle cx="83" cy="13" r="7" fill="currentColor" /></symbol>
+        <symbol id="icon-agent" viewBox="0 0 100 80"><path fill="none" stroke="currentColor" stroke-width="7" d="M20 40h60M50 40 29 17M50 40l25-24M50 40 27 64M50 40l-20 24" /><circle cx="50" cy="40" r="11" fill="currentColor" /><circle cx="20" cy="40" r="9" fill="currentColor" /><circle cx="80" cy="40" r="9" fill="currentColor" /><circle cx="28" cy="16" r="9" fill="currentColor" /><circle cx="76" cy="15" r="9" fill="currentColor" /><circle cx="28" cy="65" r="9" fill="currentColor" /><circle cx="78" cy="65" r="9" fill="currentColor" /></symbol>
+        <symbol id="icon-card" viewBox="0 0 100 80"><rect x="9" y="13" width="82" height="54" rx="5" fill="none" stroke="currentColor" stroke-width="7" /><path fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" d="M25 30h50M25 44h35" /><path fill="currentColor" d="M73 52c8 0 14 5 18 11-4 6-10 11-18 11s-14-5-18-11c4-6 10-11 18-11Zm0 7a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" /></symbol>
+        <symbol id="icon-plan" viewBox="0 0 100 80"><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M18 15h23M18 40h23M18 65h23M59 15h22v25H59v25h22M70 53l11 12 14-22" /><circle cx="12" cy="15" r="6" fill="currentColor" /><circle cx="12" cy="40" r="6" fill="currentColor" /><circle cx="12" cy="65" r="6" fill="currentColor" /></symbol>
+        <symbol id="icon-thread" viewBox="0 0 100 80"><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" d="M8 62c18-45 33 21 50-20 13-30 26-21 34-4" /><path fill="currentColor" d="M48 20c8-16 29-10 29 6 0 15-20 27-29 35-9-8-29-20-29-35 0-16 21-22 29-6Z" /></symbol>
+        <symbol id="icon-clapboard" viewBox="0 0 100 80"><path fill="currentColor" d="M8 25h84v49H8zm0-4L19 4h84L92 21zM27 4 17 21h12L39 4zm29 0L46 21h12L68 4zm29 0L75 21h12L97 4z" /></symbol>
+        <symbol id="icon-arrow" viewBox="0 0 100 80"><path fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" d="M11 61c20-1 34-8 43-21 7-10 18-17 35-18M68 9l21 13-15 20" /></symbol>
+      </defs>
+    </svg>
+
+    <main id="content">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="icon-field" data-icon="icon-flow" aria-hidden="true"></div>
+        <div class="section-inner hero-inner reveal">
+          <h1 id="page-title"><span>Nishant</span> <span>Hada</span></h1>
+          <p class="tagline">I like to flow &amp; build things.</p>
         </div>
-      </div>
+        <p class="swipe">Swipe up <span aria-hidden="true">↓</span></p>
+      </section>
 
-      <div class="right-section">
-        <h1 class="greeting">Namaste</h1>
-        <p class="tagline">I like to flow & build things.</p>
-        <div class="bio">
-          <p>I'm a software engineer in New York, but I think of myself as a designer before an engineer. I like designing things in general like applications, graphics, interfaces, videos, clothes, bags, pretty much everything.</p>
-          <p>I do fashion designing for my fashion brand, <a href="https://tresfae.com" target="_blank">Tresfae</a>, make open-source productivity apps for fun, and have built a couple of startups along the way.</p>
-          <p>Outside of that, I like spending time in nature, reading books, watching shows, listening to podcasts, and walking hundreds of kilometers.</p>
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="icon-field" data-icon="icon-leaf" aria-hidden="true"></div>
+        <div class="section-inner story-inner reveal">
+          <p class="eyebrow">Hello from New York</p>
+          <h2 id="intro-title">Engineer by work.<br />Designer by instinct.</h2>
+          <p class="body-copy">I’m a software engineer who likes making software and objects. I balance that work with nature, books, shows, podcasts, and very long walks.</p>
         </div>
-      </div>
-    </div>
-  </main>
+      </section>
 
-  <footer>1926-2026 by Nishant Hada</footer>
+      <section class="transition" aria-labelledby="recent-title">
+        <div class="icon-field" data-icon="icon-spark" aria-hidden="true"></div>
+        <div class="section-inner story-inner reveal">
+          <p class="eyebrow">What I’m making</p>
+          <h2 id="recent-title">Recent projects</h2>
+          <p class="body-copy">Three open-source products built to make working with technology feel more useful, private, and human.</p>
+        </div>
+      </section>
 
-  <script src="script.js"></script>
-</body>
+      <section class="project" aria-labelledby="ai-thing-title">
+        <div class="icon-field" data-icon="icon-agent" aria-hidden="true"></div>
+        <div class="section-inner project-inner reveal">
+          <p class="eyebrow">Privacy-first desktop AI</p>
+          <h2 id="ai-thing-title">AI Thing</h2>
+          <p class="body-copy">Run AI agents, automations, and complex tasks locally and in parallel—with local data, your own model keys, multiple agents, MCP servers, and background schedules.</p>
+          <nav class="project-links" aria-label="AI Thing links">
+            <a href="https://aithing.dev" target="_blank" rel="noopener noreferrer">Visit AI Thing <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/thisisnsh/aithing" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="project" aria-labelledby="cuecard-title">
+        <div class="icon-field" data-icon="icon-card" aria-hidden="true"></div>
+        <div class="section-inner project-inner reveal">
+          <p class="eyebrow">Invisible speaker notes</p>
+          <h2 id="cuecard-title">CueCard</h2>
+          <p class="body-copy">A lightweight teleprompter that stays visible to you while remaining hidden from Zoom, Google Meet, Teams, recordings, and your shared screen.</p>
+          <nav class="project-links" aria-label="CueCard links">
+            <a href="https://cuecard.dev" target="_blank" rel="noopener noreferrer">Visit CueCard <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/thisisnsh/cuecard" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="project" aria-labelledby="planx-title">
+        <div class="icon-field" data-icon="icon-plan" aria-hidden="true"></div>
+        <div class="section-inner project-inner reveal">
+          <p class="eyebrow">Plans worth keeping</p>
+          <h2 id="planx-title">PlanX</h2>
+          <p class="body-copy">Turn an AI coding agent’s plan from disposable chat text into a versioned artifact people can review, annotate, compare, revise, approve, and execute.</p>
+          <nav class="project-links" aria-label="PlanX links">
+            <a href="https://planx.sh" target="_blank" rel="noopener noreferrer">Visit PlanX <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/thisisnsh/planx" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="transition" aria-labelledby="beyond-title">
+        <div class="icon-field" data-icon="icon-thread" aria-hidden="true"></div>
+        <div class="section-inner story-inner reveal">
+          <p class="eyebrow">Made together</p>
+          <h2 id="beyond-title">Beyond code</h2>
+          <p class="body-copy">I also build stories, clothing, and other tangible ideas with people I care about.</p>
+        </div>
+      </section>
+
+      <section class="project" aria-labelledby="tresfae-title">
+        <div class="icon-field" data-icon="icon-thread" aria-hidden="true"></div>
+        <div class="section-inner project-inner reveal">
+          <p class="eyebrow">Made with my mom</p>
+          <h2 id="tresfae-title">Tresfae</h2>
+          <p class="body-copy">A fashion brand we’re building around premium, comfortable clothing—and a commitment to giving back as we grow.</p>
+          <nav class="project-links" aria-label="Tresfae links">
+            <a href="https://tresfae.com" target="_blank" rel="noopener noreferrer">Visit Tresfae <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="project" aria-labelledby="studios-title">
+        <div class="icon-field" data-icon="icon-clapboard" aria-hidden="true"></div>
+        <div class="section-inner project-inner reveal">
+          <p class="eyebrow">A hobby production house</p>
+          <h2 id="studios-title"><span>NSH</span> <span>Studios</span></h2>
+          <p class="body-copy">A place for making original short films and bringing the stories I imagine to life.</p>
+          <nav class="project-links" aria-label="NSH Studios links">
+            <a href="https://nshstudios.com" target="_blank" rel="noopener noreferrer">Visit NSH Studios <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/thisisnsh/nshstudios" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <div class="icon-field" data-icon="icon-arrow" aria-hidden="true"></div>
+        <div class="section-inner story-inner reveal">
+          <p class="eyebrow">Say hello</p>
+          <h2 id="closing-title">Still flowing.<br />Still building.</h2>
+          <nav class="contact-links" aria-label="Contact and social links">
+            <a href="mailto:hello@thisisnsh.com">Email</a>
+            <a href="https://github.com/thisisnsh" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://linkedin.com/in/thisisnsh" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://instagram.com/thisisnsh" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
