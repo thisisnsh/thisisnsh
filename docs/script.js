@@ -195,7 +195,8 @@ document.documentElement.classList.add('js');
 
     sections.forEach((section) => {
       const field = section.querySelector('.icon-field');
-      if (!field || !field.dataset.icon) return;
+      const iconIds = (field?.dataset.icons || field?.dataset.icon || '').split(/\s+/).filter(Boolean);
+      if (!field || !iconIds.length) return;
       const positions = [];
       let attempts = 0;
 
@@ -223,7 +224,8 @@ document.documentElement.classList.add('js');
         iconSvg.style.setProperty('--icon-start-y', `${(-1 + Math.random() * 2).toFixed(2)}vh`);
         iconSvg.style.setProperty('--icon-end-x', `${(-1.2 + Math.random() * 2.4).toFixed(2)}vw`);
         iconSvg.style.setProperty('--icon-end-y', `${(-1 + Math.random() * 2).toFixed(2)}vh`);
-        iconUse.setAttribute('href', `#${field.dataset.icon}`);
+        const iconId = iconIds[Math.floor(Math.random() * iconIds.length)];
+        iconUse.setAttribute('href', `#${iconId}`);
         iconUse.setAttribute('width', '100');
         iconUse.setAttribute('height', '80');
         iconSvg.append(iconUse);
