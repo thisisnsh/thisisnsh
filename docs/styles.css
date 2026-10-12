@@ -370,6 +370,16 @@ section h2 {
   text-transform: uppercase;
 }
 
+.project-badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.55rem 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
 .project-item h3 {
   grid-area: title;
   margin: 0;
