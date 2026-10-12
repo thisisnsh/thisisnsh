@@ -1,5 +1,3 @@
-![](https://komarev.com/ghpvc/?username=thisisnsh&style=for-the-badge)
-
 ### Hi, I'm Nishant 👋
 
 Engineer by work. Designer by instinct. Senior Software Engineer at Bloomberg, based in New York.
